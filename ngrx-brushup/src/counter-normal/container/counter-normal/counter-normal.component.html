@@ -1,4 +1,20 @@
 
-<counter-output></counter-output>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="counter-output-container my-3">
+            <counter-output
+            [counter]="countValue"
+            ></counter-output>
+        </div>
+        <div class="counter-btns-container my-3">
+            <counter-buttons
+            (incrementEvent)="onIncrementCount()"
+            (decrementEvent)="onDecrementCount()"
+            (resetEvent)="onResetCount()"
+            ></counter-buttons>
+        </div>
+    </div>
+</div>
 
-<counter-buttons></counter-buttons>
+
+

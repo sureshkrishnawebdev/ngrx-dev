@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'counter-output',
     template:`
 
-        Counter Output Component works
+     <h2>  Counter is:  {{ counter }} </h2>
 
     `,
     styles:[
         `
-        
+        :host{
+            font-size: 14px;
+        }
+
         `
     ]
 })
 export class CounterOutputComponent {
+
+    @Input() 
+    counter: number = 0;
 
 }
