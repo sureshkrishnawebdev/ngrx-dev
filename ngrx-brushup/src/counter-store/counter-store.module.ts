@@ -25,7 +25,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild( routes ),
     StoreModule.forRoot(
-      { counter: counterReducer }
+      { counterStoreInstance: counterReducer }
       )
   ]
 })
