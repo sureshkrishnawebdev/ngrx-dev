@@ -1,0 +1,32 @@
+1. created new angular app
+2. created new module - counter-normal - old angular way - services + decorators
+    2.1. new module setup 
+    2.2. implementing feature
+
+3. create new module - counter-store - store, action, reducer, selectors
+
+    3.1. new module setup
+
+    3.2. implementing feature
+
+        3.2.1. installing ngrx store
+
+        for counter - single value in store
+
+        3.2.2. setup store 
+        3.2.3. setup action 
+        3.2.4. setup reducer
+        3.2.5. setup selectors 
+
+        for counterName - 2 different values in store
+
+        3.2.6. update - store, action, reducer, selector
+        
+    3.3. fixing selector issue - when we have more than 2 values in same store
+
+    3.4. refactoring 
+        3.4.1. subscriptions
+        3.4.2. counter interface
+        3.4.3. how selectors from store - helps refactoring
+
+4. Refactoring app header - navbar
