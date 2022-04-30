@@ -7,6 +7,9 @@ import { CounterStoreComponent } from './container/counter-store/counter-store.c
 import { CounterStoreButtonComponent } from './components/counter-store-button.component';
 import { CounterStoreOutputComponent } from './components/counter-store-output.component';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './service/counter.reducer';
+
 
 const routes: Routes = [
   { path: '', component: CounterStoreComponent}
@@ -20,7 +23,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild( routes )
+    RouterModule.forChild( routes ),
+    StoreModule.forRoot(
+      { counter: counterReducer }
+      )
   ]
 })
 export class CounterStoreModule { }
