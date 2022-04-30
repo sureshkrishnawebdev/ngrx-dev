@@ -1,0 +1,4 @@
+1. created new angular app
+2. created new module - counter-normal - old angular way - services + decorators
+    2.1. new module setup 
+    2.2. implementing feature
