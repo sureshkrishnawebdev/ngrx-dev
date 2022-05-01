@@ -19,7 +19,7 @@
         3.2.5. setup dispatch actions
         3.2.6. setup selectors 
 
-        for counter - accept input from user - send a value with action
+        for counter - accept input from user and increment counter - (send a value with action)
 
         3.2.7. update - store, action, reducer, selector
 
