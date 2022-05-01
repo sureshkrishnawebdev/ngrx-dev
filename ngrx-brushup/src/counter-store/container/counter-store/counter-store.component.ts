@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { getCounterTitle } from 'src/counter-store/service/counter.selectors';
+import { CounterState } from 'src/counter-store/service/counter.state';
 
 @Component({
   selector: 'app-counter-store',
@@ -14,7 +15,7 @@ export class CounterStoreComponent implements OnInit{
   counterTitle$!: Observable<string>;  
 
   constructor(
-    private store: Store<{ counterStoreInstance: { title: string } }>
+    private store: Store<{ counterStoreInstance: CounterState }>
   ){}
 
   ngOnInit(): void{

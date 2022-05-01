@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { addToCounter, changeCounterTitle } from '../service/counter.actions';
+import { CounterState } from '../service/counter.state';
 
 @Component({
     selector: 'counter-store-input',
@@ -29,7 +30,7 @@ export class CounterStoreInputComponent {
     counterTitle: string = '';
 
     constructor(
-        private store: Store<{counterStoreInstance: {counter: number}}>
+        private store: Store<{counterStoreInstance: CounterState}>
     ){}
 
     onAdd(): void {
