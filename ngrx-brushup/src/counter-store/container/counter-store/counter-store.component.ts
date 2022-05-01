@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-counter-store',
   templateUrl: './counter-store.component.html',
-  styles: [
-  ]
+  styleUrls:['./counter-store.component.scss']
 })
-export class CounterStoreComponent implements OnInit {
+export class CounterStoreComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

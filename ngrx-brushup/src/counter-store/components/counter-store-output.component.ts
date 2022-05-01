@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'counter-store-output',
@@ -16,9 +18,26 @@ import { Component, Input } from '@angular/core';
         `
     ]
 })
-export class CounterStoreOutputComponent {
+export class CounterStoreOutputComponent implements OnInit, OnDestroy{
 
-    @Input() 
+    // PROPERTIES  
+    counterSubscription!: Subscription;
     counter: number = 0;
+
+   constructor(
+       private store: Store<{counterStoreInstance: { counter: number }}>
+   ){}
+
+
+   ngOnInit(): void {
+        this.counterSubscription = this.store.select('counterStoreInstance').subscribe( data => {
+            console.log('counterSubscription called');
+            this.counter = data.counter;
+        })
+   }
+
+   ngOnDestroy(): void {
+    this.counterSubscription && this.counterSubscription.unsubscribe();
+   }
 
 }
