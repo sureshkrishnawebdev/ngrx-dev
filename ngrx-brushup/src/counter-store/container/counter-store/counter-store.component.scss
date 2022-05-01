@@ -1,0 +1,19 @@
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        margin: 10px;
+    }
+
+    button {
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        border-radius: 5%;
+        border: none;
+        margin: 10px;
+    }
+
+}

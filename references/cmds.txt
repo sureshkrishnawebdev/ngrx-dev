@@ -1,0 +1,6 @@
+1. To create new project
+    - ng new appName
+
+2. To install ngrx store
+    - npm install @ngrx/store
+    
