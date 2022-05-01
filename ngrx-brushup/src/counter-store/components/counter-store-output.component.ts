@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
 import { getCounter } from '../service/counter.selectors';
+
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'counter-store-output',
     template:`
 
-     <h2>  Counter is:  {{ counter }} </h2>
+     <h2>  Counter is:  {{ counter$ | async }} </h2>
 
     `,
     styles:[
@@ -19,11 +20,10 @@ import { getCounter } from '../service/counter.selectors';
         `
     ]
 })
-export class CounterStoreOutputComponent implements OnInit, OnDestroy{
+export class CounterStoreOutputComponent implements OnInit{
 
     // PROPERTIES  
-    counterSubscription!: Subscription;
-    counter: number = 0;
+    counter$!: Observable<number>;
 
    constructor(
        private store: Store<{counterStoreInstance: { counter: number }}>
@@ -31,14 +31,8 @@ export class CounterStoreOutputComponent implements OnInit, OnDestroy{
 
 
    ngOnInit(): void {
-        this.counterSubscription = this.store.select( getCounter ).subscribe( counter => {
-            console.log('counterSubscription called');
-            this.counter = counter;
-        })
+       this.counter$ = this.store.select( getCounter );
    }
 
-   ngOnDestroy(): void {
-    this.counterSubscription && this.counterSubscription.unsubscribe();
-   }
 
 }
