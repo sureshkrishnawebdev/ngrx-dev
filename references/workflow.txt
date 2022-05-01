@@ -23,7 +23,7 @@
 
         3.2.7. update - store, action, reducer, selector
 
-        for counterName - 2 different values in store
+        for counterTitle - 2 different values in store
 
         3.2.8. update - store, action, reducer, selector
         
