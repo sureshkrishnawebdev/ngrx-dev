@@ -9,6 +9,8 @@ import { CounterStoreOutputComponent } from './components/counter-store-output.c
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './service/counter.reducer';
+import { FormsModule } from '@angular/forms';
+import { CounterStoreInputComponent } from './components/counter-store.input.component';
 
 
 const routes: Routes = [
@@ -19,11 +21,13 @@ const routes: Routes = [
   declarations: [
     CounterStoreComponent,
     CounterStoreButtonComponent,
-    CounterStoreOutputComponent
+    CounterStoreOutputComponent,
+    CounterStoreInputComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild( routes ),
+    FormsModule,
     StoreModule.forRoot(
       { counterStoreInstance: counterReducer }
       )

@@ -13,19 +13,7 @@ import { decrementCounter, incrementCounter, resetCounter } from '../service/cou
     <button type="button" class="btn-info" (click)="onResetCounter()">  Reset </button>
 
     `,
-    styles:[
-        `
-        button {
-            height: 50px;
-            width: 50px;
-            text-align: center;
-            border-radius: 5%;
-            border: none;
-            margin: 10px;
-        }
-
-        `
-    ]
+    styles:[``]
 })
 export class CounterStoreButtonComponent {
 
