@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { getCounter } from '../service/counter.selectors';
 
 @Component({
     selector: 'counter-store-output',
@@ -30,9 +31,9 @@ export class CounterStoreOutputComponent implements OnInit, OnDestroy{
 
 
    ngOnInit(): void {
-        this.counterSubscription = this.store.select('counterStoreInstance').subscribe( data => {
+        this.counterSubscription = this.store.select( getCounter ).subscribe( counter => {
             console.log('counterSubscription called');
-            this.counter = data.counter;
+            this.counter = counter;
         })
    }
 

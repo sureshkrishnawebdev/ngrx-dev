@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { getCounterTitle } from 'src/counter-store/service/counter.selectors';
 
 @Component({
   selector: 'app-counter-store',
@@ -18,9 +19,9 @@ export class CounterStoreComponent implements OnInit, OnDestroy{
   ){}
 
   ngOnInit(): void{
-    this.counterTitleSubscription = this.store.select('counterStoreInstance').subscribe( data => {
+    this.counterTitleSubscription = this.store.select( getCounterTitle ).subscribe( title => {
       console.log('changeCounterTitle called');
-      this.counterTitle = data.title;
+      this.counterTitle = title;
     });
   }
 
